@@ -20,7 +20,7 @@
   },
   "scripts": {
     "unregister": "node updater.js uninstall",
-    "lint": "eslint plugin.js updater.js dev-server.js test",
+    "lint": "eslint plugin.js updater.js test",
     "test": "node --test test/*.test.js",
     "test:bun": "BUN_BE_BUN=1 opencode test/loader-bun.smoke.mjs"
   },
