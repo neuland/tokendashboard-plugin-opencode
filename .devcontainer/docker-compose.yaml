@@ -1,0 +1,18 @@
+name: tokendashboard-plugin-opencode
+services:
+  dev:
+    build:
+      context: .
+    container_name: tokendashboard-plugin-opencode-dev
+    hostname: dev
+    volumes:
+      - ..:/workspaces/tokendashboard-plugin-opencode
+      - ~/.config/opencode:/home/vscode/.config/opencode
+      - ~/.local/share/opencode:/home/vscode/.local/share/opencode
+      - ~/.cache/opencode:/home/vscode/.cache/opencode
+      - ~/.claude:/home/vscode/.claude
+      - ~/.claude.json:/tmp/host-claude.json:ro
+    environment:
+      - NODE_ENV=development
+    command: sleep infinity
+    restart: unless-stopped

@@ -1,0 +1,30 @@
+{
+  "name": "tokendashboard-plugin-opencode",
+  "version": "0.2.0",
+  "description": "opencode plugin to measure token usage per model.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neuland/tokendashboard-plugin-opencode.git"
+  },
+  "bin": {
+    "tokendashboard-plugin-opencode": "./updater.js"
+  },
+  "files": [
+    "plugin.js",
+    "updater.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "unregister": "node updater.js uninstall",
+    "lint": "eslint plugin.js updater.js dev-server.js test",
+    "test": "node --test test/*.test.js",
+    "test:bun": "BUN_BE_BUN=1 opencode test/loader-bun.smoke.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^10.5.0"
+  }
+}
