@@ -13,7 +13,7 @@ opencode plugin that captures token usage per model and forwards it to an intern
 ## Install
 
 ```bash
-npx git+https://github.com/neuland/tokendashboard-plugin-opencode.git install --api-base-url <api-base-url> --repo-raw-base-url https://raw.githubusercontent.com/neuland/tokendashboard-plugin-opencode/main
+npx --allow-git=all git+https://github.com/neuland/tokendashboard-plugin-opencode.git install --api-base-url <api-base-url> --repo-raw-base-url https://raw.githubusercontent.com/neuland/tokendashboard-plugin-opencode/main
 ```
 
 Both flags are required on every install/reinstall — neither has a built-in default:
@@ -26,7 +26,7 @@ Neither value is read back from a previous `config.json` — pass both again on 
 ## Uninstall
 
 ```bash
-npx git+https://github.com/neuland/tokendashboard-plugin-opencode.git uninstall
+npx --allow-git=all git+https://github.com/neuland/tokendashboard-plugin-opencode.git uninstall
 ```
 
 ## How it works
