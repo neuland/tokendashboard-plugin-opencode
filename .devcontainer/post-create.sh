@@ -9,6 +9,10 @@ set -euo pipefail
 # shows status "no_permissions").
 sudo chown -R vscode:nvm "$(npm config get prefix)/lib/node_modules"
 
+# The bind-mounted workspace shows up as owned by root inside the container, so git
+# (running as vscode) refuses it with "detected dubious ownership" until it is trusted.
+git config --global --add safe.directory "$PWD"
+
 # Bind-mounting host ~/.config/opencode and ~/.local/share/opencode creates the parent
 # directories ~/.config/ and ~/.local/ owned by the host UID (macOS: 501). opencode needs
 # to write to ~/.config/opencode/ and create ~/.local/state/, so fix the parent ownership
